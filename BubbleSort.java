@@ -2,27 +2,36 @@ package sorting;
 /**
  * 
  * @author Simir Cooper
- * @since 3/1/21
- * Hybrid Sort is an algorithm that determines whether our quadratic sorting algorithm or 
- * our randomized quick sort algorithm is used to sort arrays with varying sizes.
+ * @since 2/21/21
+ * Bubble Sort takes an array and swaps the adjacent values until it is fully sorted.
  */
-public class HybridSort {
-	public void sort(double [] arr, int bot, int top) {
-		if(arr.length<1000) {
-			QuadraticSort ob = new QuadraticSort();
-			ob.sort(arr,bot, top);
-			ob.printArray(arr);
-		}
-		else {
-			RandomizedQuickSort ob = new RandomizedQuickSort();
-			ob.sort(arr, bot, top);
-			ob.printArray(arr);
-		}
+public class BubbleSort {
+	
+	void swap (double [] arr, int i, int j) {
+		double temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
 	}
+	
+	public void sort(double [] arr) {
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - i - 1; j++) {
+				if (arr[j] > arr[j+1]) {
+					swap(arr, j, j+1);
+					
+				}
+			}
+		}
+	
+	}
+	 public void printArray(double arr[]){ 
+	        int n = arr.length; 
+	        for (int i=0; i<n; ++i) 
+	            System.out.print(arr[i] + " "); 
+	        System.out.println(); 
+	 } 
 	public static void main(String[] args) {
-		HybridSort sample = new HybridSort();
-		double [] array = {8, 5, 10, 3, 2};
-		sample.sort(array, 0, array.length-1);
+
 	}
 
 }
