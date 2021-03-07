@@ -1,0 +1,5 @@
+Selection sort has a run time of O(n^2) regardless if an array is sorted or unsorted because of the two for loops used by the algorithm. This is the reason why I
+chose it to be my quadratic sorting algorithm for hybrid sorting algorithm. This conclusion is justified my graph which shows selection sorting growing at a similar rate to n^2. 
+I  then chose to limit the use of the quadratic sorting algorithm for all arrays smaller than length 1000. This decision was made after using the runtimes.java file to test 
+several different sized arrays with both the quadratic sorting algorithm and the randomized quick sort algorithm. I noticed that there was a considerable difference 
+in run time after the array size surpassed 1000 entry. If an algorithm exceeds 1000 entries then our randomized quick sort function is used to sort the array.
